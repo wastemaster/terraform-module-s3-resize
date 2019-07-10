@@ -1,7 +1,14 @@
-variable "aws_region" {}
+variable "project_name" {
+  description = "Project name"
+}
 
-variable "environment" {}
-variable "project_name" {}
+variable "environment" {
+  description = "The name of the environment"
+}
+
+variable "aws_region" {
+  description = "Region where the resources will be created"
+}
 
 ################################################################################
 
