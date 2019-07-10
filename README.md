@@ -28,3 +28,10 @@ Creates S3 bucket + Cloudfront for storing and distributing publicly available i
 | s3\_user\_secret\_key |  |
 
 
+
+## Notes - NPM installation for AWS Lambda
+
+### To install Sharp library with binary compiled for AWS AMI, use this command
+```
+env npm_config_arch=x64 npm_config_platform=linux npm_config_target=8.10.0 npm install --save sharp
+```

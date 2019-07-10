@@ -286,7 +286,7 @@ resource "aws_lambda_function" "lambda" {
   role             = "${aws_iam_role.iam_for_lambda.arn}"
   handler          = "index.handler"
   source_code_hash = "${base64sha256(file("./modules/s3_resize/lambda.zip"))}"
-  runtime          = "nodejs6.10"
+  runtime          = "nodejs8.10"
   memory_size      = 1536
   timeout          = 30
 
