@@ -274,7 +274,7 @@ EOF
 }
 
 resource "aws_iam_policy_attachment" "access" {
-  name       = "${var.project_name}-${var.environment}-lambda-access-policy-attachmnet"
+  name       = "${var.project_name}-${var.environment}-lambda-access-policy-attachment"
   roles      = [
     "${aws_iam_role.iam_for_lambda.name}"]
   policy_arn = "${aws_iam_policy.access.arn}"
@@ -286,7 +286,7 @@ resource "aws_lambda_function" "lambda" {
   role             = "${aws_iam_role.iam_for_lambda.arn}"
   handler          = "index.handler"
   source_code_hash = "${base64sha256(file("${path.module}/lambda.zip"))}"
-  runtime          = "nodejs8.10"
+  runtime          = "nodejs12.x"
   memory_size      = 1536
   timeout          = 30
 
