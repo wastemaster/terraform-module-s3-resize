@@ -23,6 +23,6 @@ variable "should_create_user" {
 
 variable "tags" {
   description = "Tags to apply to each taggable resource"
-  type        = "map"
+  type        = map
   default     = {}
 }
